@@ -3,23 +3,25 @@ import colors from "colors";
 import productsRouter from "./routers/products.router";
 import database from "./config/database";
 
-async function connectDB() {
+const app = express();
+
+const connectDB = async () => {
   try {
     await database.authenticate();
-    database.sync();
+    await database.sync();
     console.log(colors.blue("Conexión exitosa a la BD"));
   } catch (error) {
-    console.error("Hubo un error al conectar a la BD");
-    console.error(error);
-
-    process.exit(1);
+    console.log(colors.red.bold("Hubo un error al conectar a la BD"));
   }
-}
+};
 
-connectDB();
-const server = express();
+app.use(express.json());
+app.use("/api/v1/products", productsRouter);
+app.use("/api/v1", (req, res) => {
+  res.status(200).json({ msg: "Desde API" });
+});
 
-server.use(express.json());
-server.use("/api/v1/products", productsRouter);
-
-export default server;
+export default {
+  connectDB,
+  app,
+};

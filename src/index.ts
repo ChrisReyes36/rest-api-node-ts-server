@@ -1,10 +1,12 @@
-import "reflect-metadata";
 import colors from "colors";
 import server from "./server";
 import env from "./config/env";
 
-const PORT = env.APP_PORT;
+async function bootstrap() {
+  await server.connectDB();
+  server.app.listen(env.APP_PORT, () => {
+    console.log(colors.cyan.bold(`REST API en el puerto ${env.APP_PORT}`));
+  });
+}
 
-server.listen(PORT, () => {
-  console.log(colors.cyan.bold(`REST API en el puerto ${PORT}`));
-});
+bootstrap();

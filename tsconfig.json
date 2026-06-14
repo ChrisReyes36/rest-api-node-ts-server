@@ -2,7 +2,9 @@
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src",
-    "lib": ["ESNext"],
+    "lib": [
+      "ESNext"
+    ],
     "target": "esnext",
     "moduleResolution": "NodeNext",
     "module": "NodeNext",
@@ -11,7 +13,14 @@
     "esModuleInterop": true,
     "declaration": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "types": [
+      "jest",
+      "node"
+    ],
+    "isolatedModules": true,
   },
-  "include": ["src/**/*.ts"]
+  "include": [
+    "src/**/*.ts"
+  ]
 }
