@@ -1,5 +1,7 @@
 import express from "express";
 import colors from "colors";
+import swaggerUi from "swagger-ui-express";
+import swaggerSpec from "./config/swagger";
 import productsRouter from "./routers/products.router";
 import database from "./config/database";
 
@@ -17,9 +19,7 @@ const connectDB = async () => {
 
 app.use(express.json());
 app.use("/api/v1/products", productsRouter);
-app.use("/api/v1", (req, res) => {
-  res.status(200).json({ msg: "Desde API" });
-});
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 export default {
   connectDB,
