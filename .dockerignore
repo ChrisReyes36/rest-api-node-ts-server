@@ -1,0 +1,38 @@
+# Dependencias — se reinstalan dentro del build
+node_modules
+
+# Output del compilador — se regenera en el stage build
+dist
+
+# Cobertura y tests
+coverage
+**/__tests__
+
+# Archivos de entorno — nunca deben entrar a la imagen
+.env
+.env.*
+!.env.example
+
+# Control de versiones
+.git
+.gitignore
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Docker
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# Editor
+.vscode
+.idea
+*.swp
+*.swo
+
+# Misc
+README.md
