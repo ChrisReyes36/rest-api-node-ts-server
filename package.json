@@ -9,6 +9,7 @@
     "test": "jest --detectOpenHandles",
     "test:coverage": "yarn pretest && yarn jest --detectOpenHandles --coverage",
     "pretest": "ts-node src/data --clear",
+    "docker": "docker compose down --volumes && docker compose build --no-cache && docker compose up -d",
     "build": "tsc"
   },
   "author": "Christopher Reyes",
