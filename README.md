@@ -119,7 +119,7 @@ http://localhost:4000
 ### Obtener productos
 
 ```http
-GET /api/products
+GET /api/v1/products
 ```
 
 Respuesta:
@@ -140,7 +140,7 @@ Respuesta:
 ### Obtener producto por ID
 
 ```http
-GET /api/products/:id
+GET /api/v1/products/:id
 ```
 
 ---
@@ -148,7 +148,7 @@ GET /api/products/:id
 ### Crear producto
 
 ```http
-POST /api/products
+POST /api/v1/products
 ```
 
 Body:
@@ -166,7 +166,7 @@ Body:
 ### Actualizar producto
 
 ```http
-PUT /api/products/:id
+PUT /api/v1/products/:id
 ```
 
 Body:
@@ -184,7 +184,7 @@ Body:
 ### Actualizar disponibilidad
 
 ```http
-PATCH /api/products/:id/availability
+PATCH /api/v1/products/:id/availability
 ```
 
 ---
@@ -192,7 +192,7 @@ PATCH /api/products/:id/availability
 ### Eliminar producto
 
 ```http
-DELETE /api/products/:id
+DELETE /api/v1/products/:id
 ```
 
 ---

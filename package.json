@@ -1,6 +1,6 @@
 {
   "name": "rest-api-node-ts-server",
-  "private": "true",
+  "private": true,
   "version": "1.0.0",
   "description": "REST API's con Express y TypeScript",
   "main": "index.js",
