@@ -32,6 +32,8 @@ RUN yarn build
 # ─────────────────────────────────────────
 FROM node:22-alpine AS runner
 
+RUN apk add --no-cache wget
+
 # Seguridad: no correr como root
 RUN addgroup --system --gid 1001 nodejs && \
   adduser  --system --uid 1001 appuser
@@ -48,9 +50,5 @@ ENV NODE_ENV=production \
 USER appuser
 
 EXPOSE 4000
-
-# Healthcheck interno del contenedor
-HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-  CMD wget -qO- http://localhost:${APP_PORT}/api/v1/products || exit 1
 
 CMD ["node", "dist/index.js"]

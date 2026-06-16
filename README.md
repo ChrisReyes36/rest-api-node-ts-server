@@ -43,6 +43,8 @@ DB_PASSWORD=admin
 
 APP_PORT=4000
 NODE_ENV=development
+
+FRONTEND_URL=http://localhost:5173
 ```
 
 ---
@@ -79,7 +81,7 @@ docker ps
 Detener servicios:
 
 ```bash
-docker compose down
+docker compose down --volumes
 ```
 
 ---
@@ -218,7 +220,7 @@ yarn dev
 ### Compilar TypeScript
 
 ```bash
-yarn tsc
+yarn build
 ```
 
 ---

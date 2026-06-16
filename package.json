@@ -1,6 +1,5 @@
 {
   "name": "rest-api-node-ts-server",
-  "private": true,
   "version": "1.0.0",
   "description": "REST API's con Express y TypeScript",
   "main": "index.js",
@@ -15,8 +14,10 @@
   "author": "Christopher Reyes",
   "license": "MIT",
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/jest": "^30.0.0",
+    "@types/morgan": "^1.9.10",
     "@types/node": "^25.9.3",
     "@types/supertest": "^7.2.0",
     "@types/swagger-jsdoc": "^6.0.4",
@@ -31,9 +32,11 @@
   },
   "dependencies": {
     "colors": "^1.4.0",
+    "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "express-validator": "^7.3.2",
+    "morgan": "^1.11.0",
     "openapi-types": "^12.1.3",
     "pg": "^8.21.0",
     "pg-hstore": "^2.3.4",

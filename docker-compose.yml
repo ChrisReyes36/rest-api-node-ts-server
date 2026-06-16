@@ -34,21 +34,22 @@ services:
     ports:
       - "${APP_PORT}:${APP_PORT}"
     environment:
-      NODE_ENV:    production
-      APP_PORT:    ${APP_PORT}
-      DB_HOST:     postgres
-      DB_PORT:     5432
-      DB_DB:       ${DB_DB}
-      DB_USER:     ${DB_USER}
-      DB_PASSWORD: ${DB_PASSWORD}
+      NODE_ENV:     production
+      APP_PORT:     ${APP_PORT}
+      DB_HOST:      postgres
+      DB_PORT:      5432
+      DB_DB:        ${DB_DB}
+      DB_USER:      ${DB_USER}
+      DB_PASSWORD:  ${DB_PASSWORD}
+      FRONTEND_URL: ${FRONTEND_URL}
     depends_on:
       postgres:
         condition: service_healthy
-    healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://localhost:${APP_PORT}/api/v1/products || exit 1"]
-      interval: 30s
-      timeout:  5s
-      retries:  3
+    # healthcheck:
+    #   test: ["CMD-SHELL", "wget -qO- http://localhost:${APP_PORT}/api/v1/products || exit 1"]
+    #   interval: 30s
+    #   timeout:  5s
+    #   retries:  3
 
 volumes:
   postgres_data:
